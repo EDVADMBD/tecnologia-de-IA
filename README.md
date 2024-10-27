@@ -1,4 +1,6 @@
 # Tecnologia-de-IA
+![image](https://github.com/user-attachments/assets/5b9fbb52-9efd-45e5-a374-8ec741918aad)
+
 
 # Insights do Mercado de Trabalho com Tecnologia de IA
 Introdução: O Cenário Atual
