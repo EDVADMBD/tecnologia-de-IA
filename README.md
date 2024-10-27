@@ -44,3 +44,5 @@ Ao utilizar dados e IA para entender melhor o mercado de trabalho, este projeto 
 ________________________________________
 # Próximos Passos
 O projeto pode ser expandido para incluir mais fatores, como a localização geográfica, o setor da indústria e o tamanho da empresa, oferecendo uma visão ainda mais detalhada sobre como a adoção de IA está moldando o mercado global de trabalho. Continuar monitorando essas tendências será fundamental para se adaptar ao futuro dinâmico do trabalho.
+
+VEJA O CÓDIGO AQUI: https://github.com/EDVADMBD/tecnologia-de-IA/blob/main/TEC_IA.ipynb
