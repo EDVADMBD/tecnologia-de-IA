@@ -1,0 +1,34 @@
+Entendimento do código:
+
+# Média de salário por nível de adoção
+
+Esse código realiza a análise de atualizações com base no nível de adoção de IA (Inteligência Artificial), agrupando os dados por nível de adoção e visualizando a distribuição das variações para cada grupo. Vamos detalhar o funcionamento:
+
+Cálculo da Média de Salário por Nível de Adoção :
+
+
+salary_by_adoption = df.groupby('AI_Adoption_Level')['Salary_USD'].mean()
+print(salary_by_adoption)
+Objetivo : Calcular a média de evolução em dólares (USD) para cada nível de adoção de IA presente no DataFrame df.
+Processo :
+df.groupby('AI_Adoption_Level'): Agrupa os dados no DataFrame dfcom base nos valores da coluna 'AI_Adoption_Level'.
+['Salary_USD'].mean(): Calcule a mídia da coluna 'Salary_USD'para cada grupo de nível de adoção.
+Resultado : salary_by_adoptionserá uma série que mostra a média de evolução para cada nível de adoção de IA, o que é exibido com print(salary_by_adoption).
+Visualização da Distribuição dos Salários :
+
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='AI_Adoption_Level', y='Salary_USD', data=df)
+plt.title('Distribuição de Salários por Nível de Adoção')
+plt.xlabel('Nível de Adoção')
+plt.ylabel('Salário (USD)')
+plt.show()
+Objetivo : Criar um boxplot para visualizar a distribuição dos variações (coluna 'Salary_USD') em cada nível de adoção de IA (coluna 'AI_Adoption_Level').
+Processo :
+plt.figure(figsize=(10, 6)): Define o tamanho da figura do gráfico.
+sns.boxplot(...): Utilize o Seaborn para criar o boxplot. As disposições são distribuídas no eixo Y, e os diferentes níveis de adoção de IA estão no eixo X.
+plt.title, plt.xlabel, plt.ylabel: Configurações do título do gráfico e dos rótulos dos eixos.
+
+Resultado : Um boxplot gráfico é gerado, mostrando a distribuição da evolução para cada nível de adoção de IA. Esse gráfico é útil para visualizar as medianas, quartis e possíveis outliers dos intervalos em cada nível de adoção.
+Essas etapas juntas facilitam a compreensão de como a variação varia com o nível de adoção de IA, identificando tendências e possíveis disparidades entre os níveis.
+

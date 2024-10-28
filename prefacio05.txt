@@ -1,0 +1,34 @@
+Entendimento do código:
+
+# Média salarial por setor
+
+Esse código calcula a média salarial por setor e exibe a distribuição da variação para cada setor através de um boxplot. Vamos detalhar o funcionamento de cada parte:
+
+Cálculo da Média Salarial por Setor :
+
+
+salary_by_sector = df.groupby('Industry')['Salary_USD'].mean().sort_values(ascending=False)
+print(salary_by_sector)
+Objetivo : Calcular a média das negociações (em USD) para cada setor representado no DataFrame df.
+Processo :
+df.groupby('Industry'): Agrupa os dados no DataFrame dfcom base nos valores da coluna 'Industry'(que representa o setor).
+['Salary_USD'].mean(): Calcular a média dos ganhos para cada grupo (setor) criado no agrupamento.
+.sort_values(ascending=False): Ordena os setores em ordem decrescente de salário médio.
+Resultado : salary_by_sectoré uma série que mostra a média salarial para cada setor, com os setores de maior média no topo. O print(salary_by_sector)exibe essa série no console.
+Visualização da Distribuição dos Salários por Setor :
+
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Industry', y='Salary_USD', data=df)
+plt.xticks(rotation=90)
+plt.title('Distribuição de Salários por Setor')
+plt.show()
+Objetivo : Gera um boxplot que permite visualizar a variação dos valores de variação para cada setor.
+Processo :
+plt.figure(figsize=(10, 6)): Define o tamanho da figura do gráfico.
+sns.boxplot(...): Utilize a biblioteca Seaborn para criar o boxplot, com os setores ( 'Industry') no eixo X e os regulares ( 'Salary_USD') no eixo Y.
+plt.xticks(rotation=90): Rotaciona os rótulos do eixo X em 90 graus para melhorar a legibilidade, especialmente útil se houver muitos setores.
+plt.title: Definir o título do gráfico.
+
+Resultado : O boxplot gráfico resultante mostra a distribuição de evolução para cada setor. Ele destaca a mediana, os quartis e os possíveis outliers, facilitando a comparação da variação de variação entre os diferentes setores.
+Essas análises juntas ajudam a identificar setores com tendências médias, mais altas ou mais baixas e a compreender a dispersão salarial dentro de cada setor, oferecendo uma visão abrangente dos dados salariais.

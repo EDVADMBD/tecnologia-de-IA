@@ -1,0 +1,44 @@
+Entendimento do código:
+
+#Descrição do conjunto de dados: "Insights do mercado de trabalho com tecnologia de IA"
+
+Esse código em Python é voltado para análise exploratória de dados relacionados ao mercado de trabalho em tecnologia de IA, com um foco na distribuição de rotação. detalhados por parte:
+
+Importação das Bibliotecas :
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+O código importa duas bibliotecas:
+
+pandas(abreviado como pd), usado para manipulação de dados em estruturas de tabelas (DataFrames).
+matplotlib.pyplot(abreviado como plt), usado para criação de gráficos.
+Carregar os dados :
+
+
+df = pd.read_csv("/content/ai_job_market_insights.csv")
+Aqui, o código carrega um conjunto de dados chamado ai_job_market_insights.csv, que contém informações sobre o mercado de trabalho em IA. O arquivo deve estar no diretório indicado (em /content/caso de uso no Google Colab).
+
+Análise Exploratória :
+
+
+print(df.head())
+print(df.describe())
+df.head()exibe as primeiras cinco linhas do DataFrame df, permitindo uma visão geral dos dados.
+df.describe()gera estatísticas descritivas como média, desvio padrão e valores mínimos e máximos para as colunas numéricas. Essa etapa permite entender a distribuição e os valores extremos nas variáveis ​​numéricas, como tendências.
+Visualização dos Dados :
+
+
+plt.hist(df['Salary_USD'], bins=20)
+plt.xlabel('Salary_USD')
+plt.ylabel('Frequência')
+plt.title('Distribuição de Salários')
+plt.show()
+
+Esse bloco cria um histograma para visualizar a distribuição da coluna Salary_USD:
+
+plt.hist(df['Salary_USD'], bins=20)crie o histograma com 20 intervalos para a variável Salary_USD.
+plt.xlabel('Salary_USD')e plt.ylabel('Frequência')adicionem rótulos nos eixos X e Y.
+plt.title('Distribuição de Salários')definir o título do gráfico.
+plt.show()exibe o gráfico.
+Este código, portanto, carrega o conjunto de dados, faz uma breve análise exploratória, e exibe um histograma que ajuda a entender como as tendências no setor de IA estão distribuídas.

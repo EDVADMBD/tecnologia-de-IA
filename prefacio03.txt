@@ -1,0 +1,75 @@
+Entendimento do código:
+
+# Supondo que você tenha seus dados em 'ai_job_market_insights.csv'
+# Você também precisa carregar o DataFrame nesta célula.
+
+Este código usa as bibliotecas pandas, matplotlib.pyplot, e seabornpara realizar uma análise visual dos dados relacionados ao mercado de trabalho em IA (Inteligência Artificial). Ele lê um arquivo CSV ( ai_job_market_insights.csv) para extrair insights sobre os cargos de trabalho, setores de atuação, tamanhos de empresa e níveis de adoção de IA. Vamos analisar cada parte do código:
+
+1. Importação de Bibliotecas
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+pandasé usado para manipular dados no formato de DataFrame.
+matplotlib.pyplote seabornsão usados ​​para criar gráficos.
+
+2. Carregamento do DataFrame
+
+df = pd.read_csv("/content/ai_job_market_insights.csv")
+Carregue os dados de um arquivo CSV para um DataFrame df. Esse arquivo deve conter colunas como Job_Title, Industry, Company_Size, e AI_Adoption_Level.
+
+3. Contagem de Tipos de Emprego e Visualização
+
+job_counts = df['Job_Title'].value_counts()
+Calcule a contagem de cada tipo de função listada na coluna Job_Title.
+
+plt.figure(figsize=(10, 6))
+sns.barplot(y=job_counts.index[:10], x=job_counts.values[:10], palette='viridis')
+plt.title('Top 10 Funções de Trabalho no Mercado de IA')
+plt.xlabel('Contagem')
+plt.ylabel('Função de Trabalho')
+plt.show()
+Cria um gráfico de barras com as 10 funções de trabalho mais comuns no mercado de IA, onde y=job_counts.index[:10]define os níveis de trabalho, e x=job_counts.values[:10]define a contagem correspondente.
+
+4. Distribuição de Setores e Visualização
+
+industry_counts = df['Industry'].value_counts()
+Calcule a contagem para cada setor na coluna Industry.
+
+plt.figure(figsize=(10, 6))
+sns.barplot(y=industry_counts.index[:10], x=industry_counts.values[:10], palette='viridis')
+plt.title('Top 10 Setores no Mercado de IA')
+plt.xlabel('Contagem')
+plt.ylabel('Setor')
+plt.show()
+Crie um gráfico de barras com os 10 setores mais comuns para empregos em IA.
+
+5. Distribuição de Tamanhos de Empresa e Visualização
+
+company_size_counts = df['Company_Size'].value_counts()
+Calcule a contagem para cada categoria de tamanho de empresa na coluna Company_Size.
+
+plt.figure(figsize=(10, 6))
+sns.barplot(y=company_size_counts.index[:10], x=company_size_counts.values[:10], palette='viridis')
+plt.title('Top 10 Tamanhos de Empresa no Mercado de IA')
+plt.xlabel('Contagem')
+plt.ylabel('Tamanho da Empresa')
+plt.show()
+Cria um gráfico de barras com os 10 tamanhos de empresa mais comuns no setor de IA.
+
+6. Distribuição de Níveis de Adoção de IA e Visualização
+
+ai_adoption_counts = df['AI_Adoption_Level'].value_counts()
+Calcule a contagem para cada nível de adoção de IA nas empresas, listado na coluna AI_Adoption_Level.
+
+plt.figure(figsize=(10, 6))
+sns.barplot(y=ai_adoption_counts.index, x=ai_adoption_counts.values, palette='viridis')
+plt.title('Nível de Adoção de IA nas Empresas')
+plt.xlabel('Contagem')
+plt.ylabel('Nível de Adoção de IA')
+plt.show()
+Crie um gráfico de barras para mostrar a distribuição de níveis de adoção de IA nas empresas.
+
+
+Resumo
+O código analisa o mercado de trabalho em IA, mostrando as funções mais populares, setores mais comuns, tamanhos de empresa e os níveis de adoção de IA, tudo com visualizações claras em gráficos de barras.

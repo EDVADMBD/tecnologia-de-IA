@@ -1,0 +1,44 @@
+Entendimento do código:
+
+Encoding para a coluna categórica 'AI_Adoption_Level'
+
+Análise Detalhada do Código
+Importação de Bibliotecas
+O código inicia importando as bibliotecas necessárias:
+
+pandas: Para manipulação de dados em formato tabular (DataFrames).
+sklearn.model_selection: Para dividir os dados em conjuntos de treino e teste.
+sklearn.linear_model: Para utilizar o modelo de regressão linear.
+sklearn.preprocessing: Para realizar o One-Hot Encoding.
+matplotlib.pyplot: Para criar visualizações gráficas.
+Pré-processamento dos Dados
+
+One-Hot Encoding:
+A coluna 'AI_Adoption_Level' é uma variável categórica, que precisa ser convertida em um formato numérico para ser utilizada no modelo de regressão linear.
+O One-Hot Encoding cria novas colunas binárias para cada categoria da variável original. Um valor 1 indica a presença da categoria e 0 indica a ausência.
+O parâmetro drop='first' é utilizado para evitar a multicolinearidade, removendo uma das colunas criadas pelo One-Hot Encoding.
+Criação de DataFrame:
+
+O resultado do One-Hot Encoding é convertido em um DataFrame para facilitar a manipulação.
+Separação em Variáveis Explicativas e Target:
+As colunas codificadas de 'AI_Adoption_Level' são atribuídas à variável X (variáveis explicativas).
+A coluna 'Salary_USD' é atribuída à variável y (variável alvo).
+Divisão dos Dados em Treino e Teste
+
+A função train_test_split divide os dados em um conjunto de treino (70%) e um conjunto de teste (30%).
+O parâmetro random_state=42 garante que a divisão seja sempre a mesma, permitindo a reprodutibilidade dos resultados.
+Treinamento do Modelo
+
+Um modelo de regressão linear é instanciado e treinado utilizando os dados de treino.
+Predições e Avaliação
+O modelo treinado é utilizado para fazer previsões nos dados de teste.
+As primeiras 5 previsões são exibidas.
+Um gráfico de linha é criado para comparar os valores reais e as previsões.
+O que o Código Faz?
+O código busca prever o salário (Salary_USD) de indivíduos com base no nível de adoção de inteligência artificial (AI_Adoption_Level). Para isso, ele segue os seguintes passos:
+
+Pré-processa os dados: Converte a variável categórica 'AI_Adoption_Level' em um formato numérico adequado para o modelo de regressão linear.
+Divide os dados: Separa os dados em conjuntos de treino e teste para avaliar o desempenho do modelo.
+Treina o modelo: Utiliza um modelo de regressão linear para aprender a relação entre o nível de adoção de IA e o salário.
+Faz previsões: Utiliza o modelo treinado para prever os salários de um conjunto de dados que o modelo nunca viu antes.
+Avalia o modelo: Compara as previsões com os valores reais para avaliar a precisão do modelo.

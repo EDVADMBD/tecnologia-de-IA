@@ -1,0 +1,56 @@
+Entendimento do código:
+
+# Ajustar o tamanho da figura
+
+
+Introdução
+O código Python apresentado tem como objetivo criar um gráfico de boxplot utilizando as bibliotecas Matplotlib e Seaborn. Esse tipo de gráfico é ideal para visualizar a distribuição de um conjunto de dados numéricos, especialmente quando se deseja comparar diferentes grupos. No caso específico, o código compara os salários (em dólares) de diferentes títulos de trabalho.
+
+Explicação Linha a Linha
+import matplotlib.pyplot as plt:
+
+Importa a biblioteca Matplotlib, que é a base para a criação de gráficos em Python.
+Renomeia a biblioteca como plt para facilitar a chamada de suas funções.
+import seaborn as sns:
+
+Importa a biblioteca Seaborn, que é construída sobre o Matplotlib e oferece uma interface mais alta para criar gráficos mais elegantes e informativos.
+plt.figure(figsize=(12, 6)):
+
+Cria uma nova figura (gráfico) e define seu tamanho para 12 polegadas de largura e 6 polegadas de altura. Isso controla o tamanho do gráfico que será gerado.
+sns.boxplot(x='Job_Title', y='Salary_USD', data=df):
+
+Cria o boxplot usando a função boxplot da biblioteca Seaborn.
+x='Job_Title': Especifica que a variável categórica (no eixo x) é o "Título do Trabalho".
+y='Salary_USD': Especifica que a variável numérica (no eixo y) é o "Salário em dólares".
+data=df: Indica que os dados para o gráfico estão em um DataFrame (tabela) chamado df.
+plt.title('Comparação de Salários por Título de Trabalho'):
+
+Define o título do gráfico.
+plt.xlabel('Título do Trabalho'):
+
+Define o rótulo do eixo x.
+plt.ylabel('Salário (USD)'):
+
+Define o rótulo do eixo y.
+plt.xticks(rotation=45):
+
+Rotaciona os rótulos no eixo x em 45 graus. Isso é útil quando os rótulos são longos e se sobrepõem.
+plt.show():
+
+Exibe o gráfico na tela.
+O que o Gráfico Mostra?
+O gráfico gerado por esse código mostrará um boxplot para cada título de trabalho presente nos dados. Cada boxplot representa a distribuição dos salários para aquele título. Os elementos principais de um boxplot são:
+
+Caixa: Representa os 50% do meio dos dados (entre o primeiro e o terceiro quartil).
+Linha dentro da caixa: Representa a mediana (valor central) dos dados.
+Bigodes: Estendem-se da caixa até os valores máximo e mínimo, excluindo os outliers.
+Outliers: Pontos individuais que estão muito distantes dos outros dados.
+Ao comparar os diferentes boxplots, é possível identificar:
+
+Diferenças na mediana: Títulos de trabalho com medianas diferentes indicam salários médios distintos.
+Dispersão dos dados: Boxplots mais largos indicam uma maior variabilidade nos salários para aquele título.
+Presença de outliers: Pontos individuais que se destacam podem indicar salários excepcionalmente altos ou baixos para aquele título.
+Em Resumo
+Este código Python oferece uma forma eficiente de visualizar e comparar a distribuição de salários entre diferentes títulos de trabalho. Ao entender os elementos de um boxplot e as funções utilizadas no código, você pode personalizar e criar gráficos ainda mais informativos para analisar seus próprios dados.
+
+Observação: Para executar este código, você precisará ter as bibliotecas Matplotlib e Seaborn instaladas em seu ambiente Python e ter um DataFrame df com as colunas 'Job_Title' e 'Salary_USD' carregado.

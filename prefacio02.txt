@@ -1,0 +1,73 @@
+Entendimento do código:
+
+#comparar os salários médios entre as diferentes indústrias.
+
+Esse código em Python é utilizado como bibliotecas pandase seabornpara matplotlibcomparar os resultados médios entre diferentes setores. Vamos analisar cada parte do código:
+
+1. Importação de Bibliotecas
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+pandas : Usado para manipulação e análise de dados, especialmente para trabalhar com DataFrames.
+seaborn : Uma biblioteca de visualização de dados baseada em matplotlib, que facilita a criação de gráficos estatísticos encontrados.
+matplotlib.pyplot : Utilizado para criar gráficos, oferecendo uma interface semelhante ao MATLAB.
+
+2. Criação de um DataFrame
+
+data = {
+    'Job_Title': ['Data Scientist', 'Software Engineer', 'Data Analyst', 'DevOps Engineer'],
+    'Industry': ['Tech', 'Tech', 'Finance', 'Tech'],
+    'Company_Size': ['Large', 'Medium', 'Small', 'Large'],
+    'Location': ['Remote', 'On-site', 'Remote', 'Remote'],
+    'AI_Adoption_Level': ['High', 'Medium', 'Low', 'High'],
+    'Automation_Risk': ['Low', 'Medium', 'Medium', 'Low'],
+    'Required_Skills': ['Python, SQL', 'Python, AWS', 'SQL, Excel', 'Python, Docker'],
+    'Salary_USD': [120000, 110000, 80000, 115000],
+    'Remote_Friendly': ['Yes', 'No', 'Yes', 'Yes'],
+    'Job_Growth_Projection': ['High', 'Medium', 'High', 'High']
+}
+
+df = pd.DataFrame(data)
+data : Um dicionário que contém informações sobre diferentes cargas, seus setores, tamanhos de empresa, localizações, níveis de adoção de IA, riscos de automação, habilidades de controle, controle e mais.
+pd.DataFrame(data) : Converte ou diciona
+
+3. Cálculo da Média dos Salários por Indústria
+
+salary_by_industry = df.groupby('Industry')['Salary_USD'].mean().reset_index()
+df.groupby('Industry') : Agrupa os dados do DataFrame com base na coluna 'Industry'.
+['Salary_USD'].mean() : Calcula a média dos intervalos (coluna 'Salary_USD') para cada grupo (indústria).
+reset_index() : Redefinir o índice do DataFrame resultando para que o resultado seja mais fácil de manipular e plotar.
+
+4. Criação do Gráfico de Barras
+
+plt.figure(figsize=(10, 6))
+sns.barplot(data=salary_by_industry, x='Industry', y='Salary_USD', palette='viridis')
+plt.title('Salário Médio por Indústria')
+plt.xlabel('Indústria')
+plt.ylabel('Salário Médio (USD)')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+plt.figure(figsize=(10, 6)) : Cria uma nova figura para o gráfico com um tamanho específico (10x6 polegadas).
+sns.barplot(...) : Cria um gráfico de barras usando os dados calculados, onde o eixo x representa as indústrias e o eixo e representa os movimentos médios.
+paleta='viridis' : Define uma paleta de cores do gráfico como 'viridis', que é uma paleta de cores perceptivamente uniforme.
+plt.title(...) : Adicionado um título ao gráfico.
+plt.xlabel(...) e plt.ylabel(...) : Rotulam os eixos xey, respectivamente.
+plt.xticks(rotation=45) : Rotaciona os rótulos do eixo x em 45 graus para melhor legibilidade.
+plt.tight_layout() : Ajusta automaticamente as configurações dos gráficos para que não haja sobreposição de elementos.
+plt.show() : exibe o gráfico na tela.
+
+Resumo
+O código cria um gráfico de barras que mostra as variações médias de diferentes setores, permitindo uma comparação visual clara entre elas. Essa abordagem é útil para entender as diferenças salariais em diversos setores e pode ajudar em decisões de carreira, estratégias de negócios ou análises de mercado.
+
+
+
+
+
+
+
+
+
+
+

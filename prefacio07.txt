@@ -1,0 +1,47 @@
+Entendimento do código:
+
+# Criar categorias de salário.
+
+Esse código utiliza as bibliotecas pandas, matplotlibe seabornpara categorizar faixas em faixas e visualizar a distribuição de categorias em um gráfico de barras.
+
+Aqui está o que cada seção faz:
+
+Importação de bibliotecas :
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+pandas: utilizado para manipulação de dados.
+matplotlib.pyplote seaborn: para criar visualizações gráficas.
+Criação de categorias de salário :
+
+
+bins = [0, 50000, 100000, 150000, df['Salary_USD'].max()]
+labels = ['Baixo', 'Médio', 'Alto', 'Muito Alto']
+df['Salary_Category'] = pd.cut(df['Salary_USD'], bins=bins, labels=labels)
+Definir uma lista binscom limites de transferências salariais. Esses intervalos separam as faixas em faixas de 0 a 50,000, 50,001 a 100,000, 100,001 a 150,000, e um intervalo final que vai até o valor máximo de Salary_USDno DataFrame df.
+Defina uma lista labelscom nomes de categoria para cada faixa de salário.
+Usa pd.cutpara categorizar os intervalos no DataFrame dfem uma nova coluna Salary_Category, com base nos intervalos e rótulos definidos.
+Contagem de atraso por categoria :
+
+
+salary_category_counts = df['Salary_Category'].value_counts()
+Calcula o número de registros (contagem) para cada categoria de salário e armazena esses valores na variável salary_category_counts.
+Visualização com gráficos de barras :
+
+
+plt.figure(figsize=(8, 5))
+sns.barplot(x=salary_category_counts.index, y=salary_category_counts.values, palette='magma')
+Configure o tamanho do gráfico com plt.figure(figsize=(8, 5)).
+Usa sns.barplotpara criar um gráfico de barras, com as categorias de salário no eixo xea contagem no eixo y. O palette='magma'defina uma paleta de cores.
+Configuração de títulos e exibição dos gráficos :
+
+
+plt.title('Distribuição por Categorias de Salário')
+plt.xlabel('Categoria de Salário')
+plt.ylabel('Contagem')
+plt.show()
+
+Define o título, o rótulo do eixo xe do eixo y, e exibe o gráfico com plt.show().
+Esses gráficos permitem visualizar a distribuição das faixas salariais de maneira clara, facilitando a análise da frequência de cada categoria.

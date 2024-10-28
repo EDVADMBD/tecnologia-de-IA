@@ -1,0 +1,45 @@
+Entendimento do código:
+
+#1. Distribuição de Salários por País/Localização
+
+Vamos analisar o código criado, que é responsável pela análise e visualização da distribuição de trabalho por país/localização. Aqui está uma explicação detalhada de cada parte:
+
+1. Cálculo da Média de Salário por País
+
+avg_salary_by_Location = df.groupby('Location')['Salary_USD'].mean().sort_values(ascending=False)
+print(avg_salary_by_Location) # Changed avg_salary_by_ to avg_salary_by_Location
+
+df.groupby('Location'): Agrupa os dados do DataFrame dfpela coluna 'Location', que, presumivelmente, contém os nomes dos países ou localidades. Isso permite calcular estatísticas para cada grupo (neste caso, cada local).
+
+
+['Salary_USD'].mean(): Para cada grupo criado, calcula a média dos avanços na coluna 'Salary_USD'. Essa deve conter a evolução em dólares americanos.
+
+.sort_values(ascending=False): Ordena os resultados da média de variação de forma decrescente, permitindo que os países com as variações médias mais altas se apliquem primeiro.
+
+print(avg_salary_by_Location): Exibe no console a mídia dos avanços por local, que pode ajudar a identificar quais países oferecem negociações mais altas em mídia.
+
+2. Visualização: Boxplot dos Salários por País
+
+plt.figure(figsize=(10, 6))
+import seaborn as sns # Importing seaborn
+sns.boxplot(x='Location', y='Salary_USD', data=df) # Changed 'Country' to 'Location' to match the dataframe column name
+plt.xticks(rotation=90)
+plt.title('Distribuição de Salários por País')
+plt.show()
+plt.figure(figsize=(10, 6)): Configure o tamanho da figura do gráfico. O gráfico terá uma largura de 10 polegadas e uma altura de 6 polegadas.
+
+import seaborn as sns: Importe a biblioteca Seaborn, que é uma biblioteca de visualização baseada em Matplotlib, projetada para tornar a visualização de dados mais atraente e fácil de usar.
+
+sns.boxplot(x='Location', y='Salary_USD', data=df): Crie um boxplot (ou diagrama de caixa) onde:
+
+x='Location': Defina o eixo x do gráfico como a coluna 'Location', representando os países ou localidades.
+y='Salary_USD': Defina o eixo e como a coluna 'Salary_USD', mostrando a evolução.
+data=df: Especifica que os dados usados ​​para criar o gráfico vêm do DataFrame df.
+plt.xticks(rotation=90): Rotaciona os rótulos no eixo x em 90 graus para facilitar a leitura, especialmente se houver muitos países.
+
+plt.title('Distribuição de Salários por País'): Adicionado um título aos gráficos para descrever o que ele representa.
+
+plt.show(): Exibe o gráfico gerado. Sem essa linha, os gráficos podem não ser exibidos, especialmente em alguns ambientes de desenvolvimento.
+
+Resumo
+Esse código realiza a análise da distribuição de variação por país, calculando a média da variação e visualizando essa distribuição por meio de um boxplot. Essa abordagem ajuda a identificar padrões e outliers nos dados salariais entre diferentes localidades.

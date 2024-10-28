@@ -1,0 +1,44 @@
+Entendimento do código:
+
+#análise de correlação
+
+Esse código usa as bibliotecas Matplotlib, Seaborne Pandaspara criar uma matriz de clareza visual de um conjunto de dados com colunas numéricas. Vamos analisar cada linha:
+
+Importação das bibliotecas :
+
+Pitão
+
+Copiar código
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+Aqui, são importadas as bibliotecas:
+
+Matplotlib: usado para a criação de gráficos.
+Seaborn: oferece uma interface para criação de visualizações estatísticas mais complexas e estéticas.
+Pandas: biblioteca para manipulação e análise de dados.
+Selecionando colunas numéricas :
+
+
+numeric_df = df.select_dtypes(include=['number'])
+Este comando filtra as colunas do DataFrame df, selecionando apenas as colunas numéricas. Isso é para que a matriz de brilho se concentre apenas em variáveis ​​numéricas, que são as mais adequadas para esse tipo de análise.
+
+Calculando e plotando a matriz de brilho :
+
+
+plt.figure(figsize=(10, 6))
+sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm', fmt='.2f')
+plt.title('Matriz de Correlação')
+plt.show()
+Explicação do código:
+
+plt.figure(figsize=(10, 6)): Define o tamanho do gráfico.
+sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm', fmt='.2f'):
+numeric_df.corr(): Calcula a matriz de brilho entre as colunas numéricas.
+annot=True: Exibe os valores de brilho sobre o mapa de calor.
+cmap='coolwarm': Define uma paleta de cores, variando de tons frios (negativos) a quentes (positivos).
+fmt='.2f': Define que os valores da exibição serão exibidos com duas casas decimais.
+plt.title('Matriz de Correlação'): Definir o título do gráfico.
+plt.show(): Exibe o gráfico.
+
+Este gráfico de calor (heatmap) permite identificar correlações positivas e negativas entre as variáveis, com valores mais próximos de 1ou -1descidas correlações mais fortes.
