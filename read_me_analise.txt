@@ -1,6 +1,7 @@
 PREFACIOS PARA O ENTENDIMENTO DO CÓDIGO:
 
-#Descrição do conjunto de dados: "Insights do mercado de trabalho com tecnologia de IA" - 0 https://github.com/EDVADMBD/tecnologia-de-IA/blob/main/prefacio.txt
+#Descrição do conjunto de dados: "Insights do mercado de trabalho com tecnologia de IA" - 0 
+https://github.com/EDVADMBD/tecnologia-de-IA/blob/main/prefacio.txt
 
 #1. Distribuição de Salários por País/Localização - 1 https://github.com/EDVADMBD/tecnologia-de-IA/blob/main/prefacio01.txt
 
